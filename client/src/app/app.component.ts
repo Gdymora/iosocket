@@ -13,11 +13,16 @@ export class AppComponent {
   constructor(private chatService: ChatService) {
   }
 
+  
   sendMessage() {
     this.chatService.sendMessage(this.newMessage);
     this.newMessage = '';
   }
   ngOnInit() {
-    
+    this.chatService
+      .getMessages()
+      .subscribe((message: any) => {
+        this.messageList.push(message);
+      });
   }
 }
