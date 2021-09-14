@@ -3,13 +3,8 @@ const app = express();
 const cors = require('cors');
 const http = require('http');
 const server = http.Server(app);
-const io = require("socket.io")(server, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"]
-  }
-});
-
+const socketIO = require('socket.io');
+const io = socketIO(server);
 const keys = require('./config/keys')
 const socketioJwt = require('socketio-jwt');
 const authRoutes = require('./routes/auth')
