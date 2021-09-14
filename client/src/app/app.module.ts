@@ -10,12 +10,14 @@ import { AuthInterceptor } from './share/auth.interceptor';
 import { AuthComponent } from './auth/auth.component';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { RegComponent } from './reg/reg.component';
+import { HeaderComponent } from './header/header.component';
 const config: SocketIoConfig = {
   url: 'http://localhost:3000', options: {
     /* extraHeaders: { Authorization: `Bearer ${localStorage.getItem('fb-token') }` }, */
     query: {
-      token: localStorage.getItem('fb-token') 
-    },  transports: ['websocket', 'polling', 'flashsocket'],  
+      token: localStorage.getItem('fb-token')
+    }, transports: ['websocket', 'polling', 'flashsocket'],
   }
 };
 
@@ -23,7 +25,9 @@ const config: SocketIoConfig = {
   declarations: [
     AppComponent,
     MainLayoutComponent,
-    AuthComponent
+    AuthComponent,
+    RegComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

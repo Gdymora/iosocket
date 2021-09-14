@@ -1,0 +1,15 @@
+<body class="text-center container">
+    <form (submit)="signUp()" class="form-signin">
+      <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Форма реєстрації</h1>     
+      <input [(ngModel)]="person.name" name="name" id="inputName" class="form-control" placeholder="Name">
+      <input [(ngModel)]="person.login" name="login" id="inputLogin" class="form-control" placeholder="Login">
+      <input [(ngModel)]="person.email" name="email" id="inputEmail" class="form-control" placeholder="Email address">    
+      <input [(ngModel)]="person.password" name="password" id="inputPassword" class="form-control" placeholder="Password">
+     
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Зареєструватись</button>
+      <p class="mt-5 mb-3 text-muted">© 2017-2021</p>
+    </form>
+  
+
+</body>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http"; 
+import { HttpClient } from "@angular/common/http";
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators'
@@ -15,8 +15,8 @@ export class AuthService {
 
 
   register(user: User): Observable<User> {
-    return this.http.post<User>('/api/register', user)
-  } 
+    return this.http.post<User>(`${environment.url}/api/register`, user)
+  }
 
   login(user: User): Observable<User> {
     return this.http.post<User>(`${environment.url}/api/login`, user)
