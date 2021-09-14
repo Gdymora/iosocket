@@ -1,9 +1,12 @@
 <body class="container">
-   
+
     <input [(ngModel)]="newMessage" (keyup)="$event.keyCode == 13 && sendMessage()" />
     <button (click)="sendMessage()">Send Message</button>
     <div *ngFor="let message of messageList">
-        {{message}}
+        <span ngClass=" {{message.class}}">
+            {{message.login}}
+        </span>
+        {{message.msg}}
     </div>
 
 </body>

@@ -39,25 +39,19 @@ io.use(socketioJwt.authorize({
   secret: keys.jwt,
   handshake: true
 }));
-
-
+const textColor = require('./lib/color');
 io.on('connection', (socket) => {
-  console.log('hello!', socket);
-  console.log('hello!', socket.encoded_token);
-  console.log('hello!', socket.decoded_token.login);
-  console.log('user connected id =', socket.id);
-  //console.log('user connected', socket.handshake);
 
+  const login = socket.decoded_token.login
   socket.on('disconnect', () => {
     console.log('user disconnected');
   });
 
   socket.on('my message', (msg) => {
     console.log('message: ' + msg);
-    io.emit('new-message', msg);
+    io.emit('new-message', { login: login, msg: msg, class: textColor.primary });
   });
 });
-
 
 server.listen(port, host, () => {
   console.log(`Example - app listening at ${host}:${port}`);
