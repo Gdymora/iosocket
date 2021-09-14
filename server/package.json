@@ -1,0 +1,23 @@
+{
+  "name": "client",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "cd client && ng serve",
+    "server": "node server/index.js"
+  },
+  "private": true,
+  "dependencies": {
+    "bcrypt": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "dotenv": "^10.0.0",
+    "express": "*",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "*",
+    "nodemon": "^2.0.12",
+    "passport": "*",
+    "passport-jwt": "*",
+    "socket.io": "^4.2.0",
+    "socketio-jwt": "^4.6.2"
+  }
+}

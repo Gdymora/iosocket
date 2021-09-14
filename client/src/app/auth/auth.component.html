@@ -1,0 +1,13 @@
+<body class="text-center container">
+    <form (submit)="signIn()" class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal">Форма реєстрації</h1>    
+    
+      <input [(ngModel)]="person.email" name="email" id="inputEmail" class="form-control" placeholder="Email address">    
+      <input [(ngModel)]="person.password" name="password" id="inputPassword" class="form-control" placeholder="Password">
+     
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Увійти</button>
+      <p class="mt-5 mb-3 text-muted">© 2017-2021</p>
+    </form>
+  
+
+</body>
